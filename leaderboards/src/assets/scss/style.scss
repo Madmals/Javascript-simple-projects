@@ -1,0 +1,123 @@
+@import "reset";
+@import "variables";
+@import "utilities";
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+     background-image: linear-gradient(90deg, #e0dee6, #263bb1); 
+}
+.container {
+  width: 550px;
+  // height: 550px;
+  overflow: hidden;
+  padding: 10px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+  }
+
+  .card-area {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    overflow-y: scroll;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+    .card {
+      height: 400px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 10px;
+
+      .img-container {
+        width: 150px;
+        height: 100px;
+        background-color:rgb(62, 57, 57);
+
+        img {
+
+        width: 150px;
+        height: 100px;
+        object-fit: contain;
+        }
+      }
+
+      .number {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        // background-color: rgb(218, 214, 214);
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        .star-area {
+          display: flex;
+          margin-top: 5px;
+
+          .rel{
+            margin-right: 20px;
+          }
+
+          .stars-outer {
+            // -webkit-text-fill-color: gold;
+            // -webkit-text-stroke-width: 1px;
+            // -webkit-text-stroke-color: black;
+            position: relative;
+            display: inline-block;
+
+          }
+
+          .stars-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+          }
+
+          .stars-outer::before {
+            content: "\f005 \f005 \f005 \f005 \f005";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #ccc;
+          }
+
+          .stars-inner::before {
+            content: "\f005 \f005 \f005 \f005 \f005";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #f8ce0b;
+          }
+        }
+
+        .tag{
+          margin-top: 5px;
+        .add {
+          margin-right: 5px;
+          background-color: $secondary-color;
+          border: none;
+          padding: 5px;
+          margin-top: 5px;
+          border-radius: 5px;
+        }
+        }
+
+      }
+
+      }
+  }
+}

@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+:root{
+
+  --start-seconds: 3;
+  --start-minutes: 1;
+  --start-hours: 1;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(90deg, #dcc70d, #c0e890);
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+
+.top-area {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 10%;
+  align-items: center;
+  padding: 0 40px 0 40px;
+}
+
+.top-area h4 {
+  color: rgb(40, 37, 37);
+  font-size: 20px;
+}
+
+.top-area .fa-bars {
+  color: rgb(62, 58, 58);
+  font-size: 20px;
+}
+svg {
+  fill: whitesmoke;
+  height: 250px;
+  width: 400px;
+  stroke: black;
+  stroke-width: 0.7;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+}
+
+.timer-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.time-counter{
+  height: 10%;
+  width: 100%;
+  font-size: 50px;
+  text-align: center;
+
+}
+
+.button-container{
+  height: inherit;
+  width: inherit;
+  text-align: center;
+  /* background-color: #d00505; */
+}
+
+button{
+  font-size: 20px;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+
+}
+
+.far,.fas{
+  font-size: 80px;
+  color: rgb(20, 22, 22);
+}
+.hide{
+  display: none;
+
+}
+
+.marks {
+  transform: translate(20px, 20px);
+  stroke-width: 0.2;
+}
+
+.marks > line:nth-child(1) {
+  transform: rotate(30deg);
+}
+
+.marks > line:nth-child(2) {
+  transform: rotate(calc(2 * 30deg));
+}
+
+.marks > line:nth-child(3) {
+  transform: rotate(calc(3 * 30deg));
+  stroke-width: 0.5;
+}
+.marks > line:nth-child(4) {
+  transform: rotate(calc(4 * 30deg));
+}
+
+.marks > line:nth-child(5) {
+  transform: rotate(calc(5 * 30deg));
+}
+
+.marks > line:nth-child(6) {
+  transform: rotate(calc(6 * 30deg));
+  stroke-width: 0.5;
+}
+.marks > line:nth-child(7) {
+  transform: rotate(calc(7 * 30deg));
+}
+.marks > line:nth-child(8) {
+  transform: rotate(calc(8 * 30deg));
+}
+.marks > line:nth-child(9) {
+  transform: rotate(calc(9 * 30deg));
+  stroke-width: 0.5;
+}
+.marks > line:nth-child(10) {
+  transform: rotate(calc(10 * 30deg));
+}
+.marks > line:nth-child(11) {
+  transform: rotate(calc(11 * 30deg));
+}
+.marks > line:nth-child(12) {
+  transform: rotate(calc(12 * 30deg));
+  stroke-width: 0.5;
+}
+
+.hour,
+.minute,
+.seconds {
+  transform: translate(20px, 20px) rotate(0deg);
+}
+
+.seconds {
+  stroke-width: 0.3;
+  stroke: #d00505;
+}
+.minute {
+  stroke-width: 0.6;
+}
+.hour {
+  stroke-width: 1;
+}
+.pin {
+  stroke: #d00505;
+  stroke-width: 0.2;
+}
+
+.seconds {
+  transform: translate(20px, 20px) rotate(calc(var(--start-seconds) * 6deg));
+
+  animation: rotateSecondsHand 60s steps(60) infinite;
+}
+.minute {
+  transform: translate(20px, 20px) rotate(calc(var(--start-minutes) * 6deg));
+
+  animation: rotateMinuteHand 3600s steps(60) infinite;
+  animation-delay: calc(var(--start-seconds) * -1 * 1s);
+}
+.hour {
+  transform: translate(20px, 20px) rotate(calc(var(--start-hours) * 30deg));
+animation: rotateHourHand calc(12 * 60 * 60s) linear infinite;
+  animation-delay: calc(calc(var(--start-minutes) * -60 * 1s) + calc(var(--start-seconds) * -1 * 1s));
+}
+
+
+
+@keyframes rotateSecondsHand{
+    from{
+            transform: translate(20px, 20px) rotate(calc(var(--start-seconds) * 6deg));
+    }
+    to{
+            transform: translate(20px, 20px) rotate(calc(var(--start-seconds) * 6deg + 360deg));
+    }
+}
+
+
+@keyframes rotateMinuteHand {
+  from {
+    transform: translate(20px, 20px) rotate(calc(var(--start-minutes) * 6deg));
+  }
+  to {
+    transform: translate(20px, 20px) rotate(calc(var(--start-minutes) * 6deg + 360deg));
+  }
+}
+
+
+@keyframes rotateHourHand {
+  from {
+    transform: translate(20px, 20px) rotate(calc(var(--start-hours) * 30deg));
+  }
+  to {
+    transform: translate(20px, 20px) rotate(calc(var(--start-hours) * 30deg + 360deg));
+  }
+}

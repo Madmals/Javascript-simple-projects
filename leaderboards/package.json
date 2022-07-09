@@ -1,0 +1,18 @@
+{
+  "name": "sass-compile",
+  "version": "1.0.0",
+  "description": "config.",
+  "main": "index.js",
+  "scripts": {
+    "watch": "start /b live-server  --host=127.0.0.1 --port=3000 --open=./index.html && start /b sass --watch --update --style=expanded ./src/assets/scss:./src/assets/css",
+    "build": "sass --no-source-map --style=compressed ./src/assets/scss:./src/assets/css",
+    "test": "start /b npm run watch && start /b npx cypress run"
+  },
+  "type": "module",
+  "author": "hoho",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^10.3.0",
+    "sass": "^1.53.0"
+  }
+}

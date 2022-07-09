@@ -1,0 +1,232 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1100px;
+  padding: 0 30px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+
+.mx-1 {
+  margin: 0 1rem;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.px-1 {
+  padding: 1rem 0;
+}
+
+.py-1 {
+  padding: 0 1rem;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.my-2 {
+  margin: 2rem 0;
+}
+
+.mx-2 {
+  margin: 0 2rem;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.px-2 {
+  padding: 2rem 0;
+}
+
+.py-2 {
+  padding: 0 2rem;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.my-3 {
+  margin: 3rem 0;
+}
+
+.mx-3 {
+  margin: 0 3rem;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.px-3 {
+  padding: 3rem 0;
+}
+
+.py-3 {
+  padding: 0 3rem;
+}
+
+.m-4 {
+  margin: 4rem;
+}
+
+.my-4 {
+  margin: 4rem 0;
+}
+
+.mx-4 {
+  margin: 0 4rem;
+}
+
+.p-4 {
+  padding: 4rem;
+}
+
+.px-4 {
+  padding: 4rem 0;
+}
+
+.py-4 {
+  padding: 0 4rem;
+}
+
+.m-5 {
+  margin: 5rem;
+}
+
+.my-5 {
+  margin: 5rem 0;
+}
+
+.mx-5 {
+  margin: 0 5rem;
+}
+
+.p-5 {
+  padding: 5rem;
+}
+
+.px-5 {
+  padding: 5rem 0;
+}
+
+.py-5 {
+  padding: 0 5rem;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(90deg, #e0dee6, #263bb1);
+}
+
+.container {
+  width: 550px;
+  overflow: hidden;
+  padding: 10px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.container nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+.container .card-area {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  overflow-y: scroll;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.container .card-area .card {
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+}
+.container .card-area .card .img-container {
+  width: 150px;
+  height: 100px;
+  background-color: rgb(62, 57, 57);
+}
+.container .card-area .card .img-container img {
+  width: 150px;
+  height: 100px;
+  object-fit: contain;
+}
+.container .card-area .card .number {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+.container .card-area .card .text {
+  display: flex;
+  flex-direction: column;
+}
+.container .card-area .card .text .star-area {
+  display: flex;
+  margin-top: 5px;
+}
+.container .card-area .card .text .star-area .rel {
+  margin-right: 20px;
+}
+.container .card-area .card .text .star-area .stars-outer {
+  position: relative;
+  display: inline-block;
+}
+.container .card-area .card .text .star-area .stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+.container .card-area .card .text .star-area .stars-outer::before {
+  content: "\f005\f005\f005\f005\f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #ccc;
+}
+.container .card-area .card .text .star-area .stars-inner::before {
+  content: "\f005\f005\f005\f005\f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #f8ce0b;
+}
+.container .card-area .card .text .tag {
+  margin-top: 5px;
+}
+.container .card-area .card .text .tag .add {
+  margin-right: 5px;
+  background-color: #0398E5;
+  border: none;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
+* {
+  box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+  background: #d3cce3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #e9e4f0,
+    #d3cce3
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #e9e4f0,
+    #d3cce3
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+}
+
+nav img{
+    width: 10%;
+}
+
+.not-profit{
+    display: none;
+}
+
+
+.date{
+    display: flex;
+    align-items: center;
+    width: 20vw;
+    justify-content: space-evenly;
+}
+
+main{
+    width: 80vw;
+}
+
+.first-row{
+    display: flex;
+    gap: 5px;
+}
+
+.card-con{
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    background-color:#fff;
+    padding-top: 5vh;
+    align-items: center;
+    height:45vh;
+}
+
+.card-con img{
+    padding-top: 1vh;
+    width:4vw;
+}
+
+.card-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+input{
+    display: none;
+}
+
+.card-header div{
+    padding: 5px;
+}
+
+
+.eth-price{
+    padding-right: 3vw;
+}
+
+.profit-today{
+    padding-right:3vw;
+}
+
+.card-con-3{
+    padding: 20px;
+}
+
+.card-con img:hover{
+    cursor: pointer;
+    background-color: #d3cce3;
+    border-radius: 50%;
+}
+
+
+.each-con{
+    display: flex;
+    flex-direction:row;
+}
+
+.each-con div{
+    padding-top: 1vh;
+}
+
+.each-con img{
+    max-width:15px;
+    margin-left: 10px;
+}
+
+.second-row{
+    width:70vw;
+    margin-top: 1vh;
+    height: 30vh;
+    display: flex;
+    gap: 1vw;
+}
+
+.one{
+    width:30vw;
+    background-color: #fff;
+    padding: 15px;
+}
+
+.note{
+    background-color: #fff;
+    padding: 15px;
+}
+
+.select-con{
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.timer{
+    font-size:25px;
+    font-weight: bold;
+    color: green;
+}
+
+
+.dis{
+    display:block;
+}
+
+.not-display{
+    display: none;
+}
+
+li{
+    line-height: 27px;
+}

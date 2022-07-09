@@ -1,0 +1,25 @@
+{
+	"name": "eth-tracker",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"watch": "SET NODE_ENV=development && nodemon app.js",
+		"live": "live-server public open='./public/index.html'",
+		"test": "start /b npm run live && start /b npm run watch && start /b npx cypress run",
+		"dev": "start /b npm run live && start /b npm run watch"
+	},
+	"type": "module",
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.27.2",
+		"cors-anywhere": "^0.4.4",
+		"express": "^4.17.1",
+		"nodemon": "^2.0.19"
+	},
+	"devDependencies": {
+		"cypress": "^10.3.0"
+	}
+}

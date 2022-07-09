@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+
+<body>
+    <nav>
+        <h2>DASHBOARD</h2>
+        <div class="date">
+            <div class="today"></div>
+            <div class="time">1</div>
+        </div>
+        <img class="profitable" src="https://img.icons8.com/color/240/000000/ok--v1.png" />
+        <img class="not-profit" src="https://img.icons8.com/emoji/96/000000/red-circle-emoji.png" />
+    </nav>
+    <main>
+        <div class="first-row">
+            <div class="card-con">
+                <h4>Etherium</h4>
+                <div class="card-header">
+                    <div class="eth-price">ETH Price:RM - </div>
+                    <div class="in-btc">ETH/BTC:0.06btc</div>
+                </div>
+                <img src="https://img.icons8.com/fluency/48/000000/ethereum.png" />
+            </div>
+            <div class="card-con">
+                <h4>Profit</h4>
+                <div class="card-header">
+                    <div class="profit-today">Profit-today:RM - </div>
+                    <div class="profit-weekly">Profit-weekly:RM -</div>
+                </div>
+                <img src="https://img.icons8.com/plasticine/100/000000/economic-improvement.png" />
+            </div>
+            <div class="card-con">
+                <h4>Rig</h4>
+                <div class="card-header-3">
+                    <div class="each-con">
+                        <div class="build-hashrate">Hashrate:82000000h/s</div>
+                        <input type="text" class="hashrate" placeholdervalue="82000" value="82000000">
+                        <img class="imgHashrate" src="https://img.icons8.com/small/16/000000/edit-column.png" />
+                    </div>
+                    <div class="each-con">
+                        <div class="kw-perhour">Kw/h:USD 0.14</div>
+                        <input class="kwinp" type="text" value="0.14">
+                        <img class="imgkw" src="https://img.icons8.com/small/16/000000/edit-column.png" />
+                    </div>
+                    <div class="each-con">
+                        <div class="gpu-power">Power:360W</div>
+                        <input type="text" class="inpPow" value="360">
+                        <img class="imgPow" src="https://img.icons8.com/small/16/000000/edit-column.png" />
+
+                    </div>
+                </div>
+                <img class="img-3" src="https://img.icons8.com/doodle/48/000000/video-card.png" />
+            </div>
+
+        </div>
+        <div class="second-row">
+            <div class="one">
+                <h4>Check interval for ETH profitablity</h4>
+                <div class="select-con">
+                    <select name="time" id="time">
+                        <option value=""></option>
+                        <option value="0">Now</option>
+                        <option value="60">1 hour</option>
+                        <option value="12">12 hours</option>
+                        <option value="24">24 hours</option>
+                    </select>
+                    <div class="timer">00:00:00</div>
+                </div>
+
+            </div>
+            <div class="note">
+                <h3>Note</h3>
+                <ul>
+                    <li>For input after keyin press ENTER</li>
+                    <li>Hasrate and power ref <a href="https://2cryptocalc.com/most-profitable-gpu">GPU</a></li>
+                    <li>KW/H based on electric provider highest rate after certain treshold</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+    <script src="./main.js" type="module"></script>
+</body>
+
+</html>
