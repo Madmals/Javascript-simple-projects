@@ -1,16 +1,18 @@
-import { KEY_VALUE1, KEY_VALUE2 } from "../config.js"
 
 
 const cardArea = document.querySelector(".card-area")
 
 const imageUrl = 'https://image.tmdb.org/t/p/w1280'
-const urlTrending = `https://api.themoviedb.org/3/trending/movie/week?api_key=${KEY_VALUE1}`
-const urlTag = `https://api.themoviedb.org/3/genre/movie/list?api_key=${KEY_VALUE2}
-&language=en-US`
+// const urlTrending = `https://api.themoviedb.org/3/trending/movie/week?api_key=${KEY_VALUE1}`
+// const urlTag = `https://api.themoviedb.org/3/genre/movie/list?api_key=${KEY_VALUE2}
+// &language=en-US`
+const urlTrending = '/.netlify/functions/api-key1'
+const urlTag = `/.netlify/functions/api-key2`
 
 async function fetchUrl(url, n) {
     try {
         const res = await fetch(url, {}, n)
+        console.log(res)
         const data = await res.json()
         return data
     } catch (error) {
@@ -26,7 +28,7 @@ async function trending() {
 
     try {
         const data = await fetchUrl(urlTrending, 5)
-        // console.log(data) 
+        console.log(data) 
         const eachgenreId = []
 
         data.results.forEach(eachgenre => {
@@ -45,11 +47,12 @@ async function trending() {
 
 }
 
+
 async function tag() {
     try {
         const data = await fetchUrl(urlTag, 5)
-        const dataGenre = data.genres
-        return dataGenre
+        const { genres} = data
+        return genres
 
     } catch (error) {
         throw error
@@ -139,7 +142,7 @@ const run = async () => {
         for (i = 0; i < tags.length; i++) {
 
             let newtag = document.createElement('div')
-            newtag.classList.add(".add")
+            newtag.classList.add("add")
             newtag.style.marginRight = "5px"
             newtag.style.fontWeight = "700"
             newtag.innerHTML = data[i]
