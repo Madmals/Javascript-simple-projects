@@ -1,0 +1,1 @@
+module.exports = require('./src/functions/api-key1/api-key1.js')
