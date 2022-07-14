@@ -4,9 +4,10 @@
   "description": "config.",
   "main": "index.js",
   "scripts": {
-    "watch": "start /b live-server  --host=127.0.0.1 --port=3000 --open=./index.html && start /b sass --watch --update --style=expanded ./src/assets/scss:./src/assets/css",
+    "watch": "start /b live-server  --host=127.0.0.1 --port=3000 --open=./src/index.html && start /b sass --watch --update --style=expanded ./src/assets/scss:./src/assets/css",
     "build": "sass --no-source-map --style=compressed ./src/assets/scss:./src/assets/css",
-    "test": "start /b npm run watch && start /b npx cypress run"
+    "test-local": "start /b netlify dev  && start /b npx cypress run",
+    "test": "start /b https://remarkable-dango-daa572.netlify.app/ && start /b npx cypress run"
   },
   "type": "module",
   "author": "hoho",
