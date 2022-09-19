@@ -135,26 +135,37 @@ const getEth = async (hash, kw, pow) => {
 	let res = await fetch(`/api?hashrate=${hash}&power=${pow}&poolfee=0&powercost=${kw}&difficultytime=0`)
 	let data = await res.json()
 
-
 	let res2 = await fetch("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd/myr.json")
 	let data2 = await res2.json()
 
 	const [a, b] = await Promise.all([data, data2])
 
-	const prToday = (a.profitInDayUSD * b.myr).toFixed(2),
-		prWeekly = (a.profitInWeekUSD * b.myr).toFixed(2)
+	const prToday = (a[1].profitInDayUSD * b.myr).toFixed(2),
+		prWeekly = (a[1].profitInWeekUSD * b.myr).toFixed(2)
 
-	ethPrice.innerHTML = `ETH Price:${(a.price_usd * b.myr).toFixed(2)}`
-	ethBtc.innerHTML = `ETH/BTC:${(a.price_btc).toFixed(2)}BTC`
+	ethPrice.innerHTML = `ETH Price:${(a[1].price_usd * b.myr).toFixed(2)}`
+	ethBtc.innerHTML = `ETH/BTC:${(a[1].price_btc).toFixed(4)}BTC`
 	profitToday.innerHTML = `Profit-today:RM<span class="change">${prToday}</span>`
 	profitWeekly.innerHTML = `Profit-Weekly:RM<span class="change">${prWeekly}</span>`
 
 	const allPrv = document.querySelectorAll('.change')
-	prToday > 0 ? allPrv.forEach(eachone => { eachone.style.color = 'green'; eachone.style.fontSize = '22px'; }) : allPrv.forEach(eachone => eachone.style.color = 'red')
-	prToday > 0 ? true : document.querySelector('.profitable').classList.toggle('dis');
-	prToday < 0 ? document.querySelector('.not-profit').classList.toggle('dis') && document.querySelector('.profitable').classList.toggle('not-dis') : document.querySelector('.profitable').classList.toggle('dis');
 
-	if ((a.profitInDayUSD * b.myr).toFixed(2) > 0) {
+	prToday > 0 ? allPrv.forEach((eachone) => {
+		eachone.style.color = "green";
+		eachone.style.fontSize = "22px";
+	}) : allPrv.forEach((eachone) => (eachone.style.color = "red"));
+
+	prToday > 0
+		? document.querySelector(".profitable").classList.toggle("dis") && document.querySelector(".not-profit").classList.toggle("not-display") : true
+
+	prToday < 0
+		?
+		document.querySelector(".not-profit").classList.toggle("dis") &&
+		document.querySelector(".profitable").classList.toggle("not-display")
+		&&
+		document.querySelector(".profitable").classList.remove(".dis")
+		: false
+	if ((a[1].profitInDayUSD * b.myr).toFixed(2) > 0) {
 		const audLink = 'https://www.mboxdrive.com/you_suffer.mp3'
 		const aud = new Audio(audLink)
 		aud.play()

@@ -19,7 +19,6 @@ router.get('/', async (req, res) => {
 			const param = new URLSearchParams({
 				[API_KEY_NAME]: API_KEY_VALUE,
 				...url.parse(req.url, true).query,})
-			console.log(param)
 				const apiRes = await axios(`${API_BASE_URL}?${param}`)
 
 				const data = await apiRes.data
