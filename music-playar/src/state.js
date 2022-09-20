@@ -1,3 +1,5 @@
+
+//credit to medium post on state
 import { reactive } from './reactive.js'
 import { passValid } from './utils.js'
 

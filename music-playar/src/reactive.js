@@ -1,4 +1,7 @@
-    let activeEffect = null
+ 
+ //credit to youtube reactive vue 
+ 
+let activeEffect = null
 
 const dependicies = new Set()
 

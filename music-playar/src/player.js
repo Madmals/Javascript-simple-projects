@@ -9,6 +9,8 @@ function onYouTubeIframeAPIReady(videoId = 'JEq10L7u3SM', seconds) {
         playerVars: {
             'playsinline': 1
         },
+
+        //stackoverflow
         events: {
             'onReady': onPlayerReady,
             'onStateChange': 
