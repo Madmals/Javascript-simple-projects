@@ -14,9 +14,7 @@ const search_lyric = async () => {
 
 	let url = `https://api.vagalume.com.br/search.php?apikey=660a4395f992ff67786584e238f501aa&art=${artist}&mus=${songs}&extra=relart`
 
-	
-
-
+	try {
 	const res = await fetch(url)
 
 	const data = await res.json()
@@ -27,6 +25,13 @@ const search_lyric = async () => {
 	${data.mus[0].text}
 	</p>
 	`
+		
+	} catch (error) {
+	lyric_con.innerHTML = `
+	<p class="new_p">
+	No lyric found for this song.
+	</p>`
+	}
 }
 
 search_btn.addEventListener('click', (e) => {
