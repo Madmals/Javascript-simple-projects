@@ -9,16 +9,22 @@ const enter = document.querySelector('.header__con__song')
 //api lyric
 const search_lyric = async () => {
 
-	let songs = song_val.value
-	let artist = artist_val.value
+	const songs = song_val.value
+	const artist = artist_val.value
 
-	let res = await fetch(`https://api.lyrics.ovh/v1/${artist}/${songs}`)
+	let url = `https://api.vagalume.com.br/search.php?apikey=660a4395f992ff67786584e238f501aa&art=${artist}&mus=${songs}&extra=relart`
 
-	let data = await res.json()
+	
+
+
+	const res = await fetch(url)
+
+	const data = await res.json()
+
 
 	lyric_con.innerHTML = `
 	<p class="new_p">
-	${data.lyrics}
+	${data.mus[0].text}
 	</p>
 	`
 }
