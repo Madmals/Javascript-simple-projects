@@ -1,18 +1,17 @@
 # General Info
 ---
-
 - An educational website to check profitability to mining Etherium 
 
-# Technologies
+# Buit with:
 ---
-Project is created with:
 
 - HTML
 - CSS
 - Javascript
 - NodeJs
 
-# <Link></Link>
+
+# Link
 ---
 
-[Link](https://ethtt.onrender.com/)
+[Click](https://ethtt.onrender.com/)
