@@ -7,6 +7,5 @@
 <img src="./assets/pics.png">
 # Built with
 ---
-
 - HTML
 - CSS
