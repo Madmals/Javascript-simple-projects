@@ -132,13 +132,17 @@ time.innerHTML = `${date.getHours()}:${date.getMinutes()} ${pm}`
 
 
 const getEth = async (hash, kw, pow) => {
-	let res = await fetch(`/api?hashrate=${hash}&power=${pow}&poolfee=0&powercost=${kw}&difficultytime=0`)
+	let res = await fetch(`/api?hashrate=${hash}&power=${pow}&powercost=${kw}&difficultytime=0`)
 	let data = await res.json()
-
+	// https://www.coincalculators.io/api?hashrate=100000000&power=230&powercost=0.1&difficultytime=6&algorithm=Ethash
+	
 	let res2 = await fetch("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd/myr.json")
 	let data2 = await res2.json()
 
+
 	const [a, b] = await Promise.all([data, data2])
+
+	console.log(a[1].profitInDayUSD)
 
 	const prToday = (a[1].profitInDayUSD * b.myr).toFixed(2),
 		prWeekly = (a[1].profitInWeekUSD * b.myr).toFixed(2)
@@ -208,39 +212,3 @@ for (let i = 0; i < edit.length; i++) {
 getEth(inputAll[0].value, inputAll[1].value, inputAll[2].value)
 
 
-console.log(`
-░░░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄▄
-░░░░░█░░░░░░░░░░░░░░░░░░▀▀▄
-░░░░█░░░░░░░░░░░░░░░░░░░░░░█
-░░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░░█
-░▄▀░▄▄▄░░█▀▀▀▀▄▄█░░░██▄▄█░░░░█
-█░░█░▄░▀▄▄▄▀░░░░░░░░█░░░░░░░░░█
-█░░█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄░█
-░█░▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█
-░░█░░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█
-░░░█░░░░██░░▀█▄▄▄█▄▄█▄▄██▄░░█
-░░░░█░░░░▀▀▄░█░░░█░█▀█▀█▀██░█
-░░░░░▀▄░░░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█
-░░░░░░░▀▄▄░░░░░░░░░░░░░░░░░░░█
-░░▐▌░█░░░░▀▀▄▄░░░░░░░░░░░░░░░█
-░░░█▐▌░░░░░░█░▀▄▄▄▄▄░░░░░░░░█
-░░███░░░░░▄▄█░▄▄░██▄▄▄▄▄▄▄▄▀
-░▐████░░▄▀█▀█▄▄▄▄▄█▀▄▀▄
-░░█░░▌░█░░░▀▄░█▀█░▄▀░░░█
-░░█░░▌░█░░█░░█░░░█░░█░░█
-░░█░░▀▀░░██░░█░░░█░░█░░█
-░░░▀▀▄▄▀▀░█░░░▀▄▀▀▀▀█░░█
-░░░░░░░░░░█░░░░▄░░▄██▄▄▀
-░░░░░░░░░░█░░░░▄░░████
-░░░░░░░░░░█▄░░▄▄▄░░▄█
-░░░░░░░░░░░█▀▀░▄░▀▀█
-░░░░░░░░░░░█░░░█░░░█
-░░░░░░░░░░░█░░░▐░░░█
-░░░░░░░░░░░█░░░▐░░░█
-░░░░░░░░░░░█░░░▐░░░█
-░░░░░░░░░░░█░░░▐░░░█
-░░░░░░░░░░░█░░░▐░░░█
-░░░░░░░░░░░█▄▄▄▐▄▄▄█
-░░░░░░░▄▄▄▄▀▄▄▀█▀▄▄▀▄▄▄▄
-░░░░░▄▀▄░▄░▄░░░█░░░▄░▄░▄▀▄
-░░░░░█▄▄▄▄▄▄▄▄▄▀▄▄▄▄▄▄▄▄▄█`)

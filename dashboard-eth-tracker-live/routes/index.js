@@ -24,7 +24,6 @@ router.get('/', async (req, res) => {
 				const data = await apiRes.data
 				res.status(200).json(data)
 
-
 			if (process.env.NODE_ENV !== 'development') {
 				console.log(`sending....: ${API_BASE_URL}?${param}`)
 			}

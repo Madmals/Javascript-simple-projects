@@ -139,6 +139,7 @@ input{
 .note{
     background-color: #fff;
     padding: 15px;
+    font-size: small;
 }
 
 .select-con{

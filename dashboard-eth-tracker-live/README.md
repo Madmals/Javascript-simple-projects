@@ -1,13 +1,18 @@
+# General Info
+---
 
-### Check profitable for ETH
+- An educational website to check profitability to mining Etherium 
 
+# Technologies
+---
+Project is created with:
 
+- HTML
+- CSS
+- Javascript
+- NodeJs
 
+# Link
+---
 
-## Link 
-
-[link](https://ethtt.onrender.com/)
-
-
-
-
+[Link](https://ethtt.onrender.com/)

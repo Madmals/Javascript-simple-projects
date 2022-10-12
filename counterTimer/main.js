@@ -51,7 +51,6 @@ buttclear.addEventListener('click', ()=>{
 
 buttreset.addEventListener('click', ()=>{
     resetTimer()
-    console.log('aa')
     
 
 })
